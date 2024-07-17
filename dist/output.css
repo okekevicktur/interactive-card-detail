@@ -885,8 +885,16 @@ video {
   width: 300px;
 }
 
+.w-\[40\%\]{
+  width: 40%;
+}
+
 .w-\[50\%\]{
   width: 50%;
+}
+
+.w-\[60\%\]{
+  width: 60%;
 }
 
 .w-\[this-is\\\\\]{
@@ -903,14 +911,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-\[40\%\]{
-  width: 40%;
-}
-
-.w-\[60\%\]{
-  width: 60%;
 }
 
 .flex-shrink{
@@ -2679,58 +2679,18 @@ video {
     left: 280px;
   }
 
-  .md\:left-\[200px\]{
-    left: 200px;
-  }
-
   .md\:w-\[50\%\]{
     width: 50%;
   }
 }
 
 @media (min-width: 1024px){
-  .lg\:left-\[200px\]{
-    left: 200px;
-  }
-
   .lg\:top-\[180px\]{
     top: 180px;
   }
 
   .lg\:top-\[400px\]{
     top: 400px;
-  }
-
-  .lg\:left-\[20px\]{
-    left: 20px;
-  }
-
-  .lg\:left-0{
-    left: 0px;
-  }
-
-  .lg\:left-\[100px\]{
-    left: 100px;
-  }
-
-  .lg\:left-\[190px\]{
-    left: 190px;
-  }
-
-  .lg\:left-\[160px\]{
-    left: 160px;
-  }
-
-  .lg\:left-\[120px\]{
-    left: 120px;
-  }
-
-  .lg\:left-\[170px\]{
-    left: 170px;
-  }
-
-  .lg\:left-\[280px\]{
-    left: 280px;
   }
 
   .lg\:col-span-1{
@@ -2792,46 +2752,12 @@ video {
 }
 
 @media (min-width: 1280px){
-  .xl\:left-\[250px\]{
-    left: 250px;
-  }
-
-  .xl\:left-\[320px\]{
-    left: 320px;
-  }
-
-  .xl\:left-\[200px\]{
-    left: 200px;
-  }
-
-  .xl\:left-\[180px\]{
-    left: 180px;
-  }
-
-  .xl\:left-\[280px\]{
-    left: 280px;
-  }
-
-  .xl\:left-\[230px\]{
-    left: 230px;
-  }
-
-  .xl\:left-\[150px\]{
-    left: 150px;
-  }
-
   .xl\:left-\[120px\]{
     left: 120px;
   }
 
-  .xl\:left-\[220px\]{
-    left: 220px;
-  }
-}
-
-@media (min-width: 1536px){
-  .\32xl\:left-\[250px\]{
-    left: 250px;
+  .xl\:left-\[200px\]{
+    left: 200px;
   }
 }
 
