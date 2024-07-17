@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link href="./dist/output.css" rel="stylesheet" />
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script>
+      function viewCard(e) {
+        event.preventDefault();
+        const name = document.getElementById("inputName").value;
+        const number = document.getElementById("inputNumber").value;
+        const month = document.getElementById("inputMonth").value;
+        const year = document.getElementById("inputYear").value;
+        const cvc = document.getElementById("inputCVC").value;
+        displayNewCard(name, number, month, year, cvc);
+      }
+      function displayNewCard(name, number, month, year, cvc) {
+        document.getElementById("cardNumber").innerHTML = number;
+        document.getElementById("cardName").innerHTML = name;
+        document.getElementById("cvc").innerHTML = cvc;
+        document.getElementById("cardyear").innerHTML = month + "/" + year;
+      }
+    </script>
+  </head>
+  <body class="h-screen">
+    <main
+      class="lg:grid lg:grid-cols-4 flex flex-col bg-white lg:h-screen w-full"
+    >
+      <div
+        class="lg:col-span-1 lg:h-full h-[240px] bg-cover bg-center relative"
+        style="
+          background-image: url(./images/bg-main-desktop.png);
+          background-repeat: no-repeat;
+        "
+      >
+        <div
+          class="lg:h-48 z-10 h-[160px] absolute w-[300px] lg:w-[340px] top-[120px] left-[20px] sm:left-[120px] md:left-[190px] xl:left-[120px] lg:top-[180px] rounded-lg flex flex-col gap-8 lg:gap-12 bg-cover bg-center p-4 lg:p-8"
+          style="
+            background-image: url(./images/bg-card-front.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <div class="gap-4 flex flex-wrap items-center">
+            <div class="w-8 h-8 bg-white rounded-full"></div>
+            <div class="w-4 h-4 border border-1 rounded-full"></div>
+          </div>
+          <div class="gap-4 flex flex-col text-white">
+            <div class="flex gap-3 text-[20px]">
+              <span id="cardNumber" class="tracking-widest"
+                >0000000000000000</span
+              >
+            </div>
+            <div class="flex justify-between text-sm">
+              <span id="cardName">JANE APPLEBEED</span>
+              <span id="cardyear">00/00 </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute w-[300px] right-4 sm:left-[60px] top-6 lg:w-[340px] md:left-[280px] xl:left-[200px] lg:top-[400px] lg:h-48 h-[160px] rounded-lg flex flex-col gap-8 bg-cover bg-center px-8 py-12"
+          style="
+            background-image: url(./images/bg-card-back.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <span id="cvc" class="text-white ml-auto pt-[18px] lg:pt-[30px]"
+            >000</span
+          >
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 w-full">
+        <div class="lg:w-[90%] ml-auto pt-[50px] lg:py-[200px] h-[100%]">
+          <form action="" class="mx-auto p-8 lg:w-[50%] flex flex-col gap-4">
+            <div class="w-full flex flex-col gap-1">
+              <label style="color: hsl(278, 68%, 11%)" for="cardName"
+                >CARDHOLDER NAME</label
+              >
+              <input
+                type="text"
+                name=""
+                id="inputName"
+                placeholder=" e.g. Jane Appleseed"
+                class="rounded-lg border p-2 border-gray-400"
+              />
+            </div>
+            <div class="w-full flex flex-col gap-1">
+              <label style="color: hsl(278, 68%, 11%)" for="cardName"
+                >CARD NUMBER</label
+              >
+              <input
+                type="number"
+                name=""
+                id="inputNumber"
+                placeholder=" e.g. 1234 5678 9123 0000 "
+                class="rounded-lg border p-2 border-gray-400"
+              />
+            </div>
+            <div class="w-full flex justify-between gap-4">
+              <div class="flex w-[60%] md:w-[50%] flex-col gap-1">
+                <label style="color: hsl(278, 68%, 11%)" for="cardName"
+                  >EXP. DATE (MM/YY)</label
+                >
+                <div class="flex w-[100%] gap-3">
+                  <input
+                    type="number"
+                    name=""
+                    id="inputMonth"
+                    placeholder="MM"
+                    class="rounded-lg w-[50%] border p-2 border-gray-400"
+                  /><input
+                    type="number"
+                    name=""
+                    id="inputYear"
+                    placeholder=" YY"
+                    class="rounded-lg w-[50%] border p-2 border-gray-400"
+                  />
+                </div>
+              </div>
+              <div class="flex w-[40%] md:w-[50%] flex-col gap-1">
+                <label style="color: hsl(278, 68%, 11%)" for="cardName"
+                  >CVC</label
+                >
+                <input
+                  type="number"
+                  name=""
+                  id="inputCVC"
+                  placeholder=" e.g. 123"
+                  class="rounded-lg border p-2 text-[ hsl(279, 6%, 55%)] border-gray-400"
+                />
+              </div>
+            </div>
+            <button
+              class="w-full cursor-pointer justify-center flex text-white rounded-lg"
+              style="
+                background-color: hsl(278, 68%, 11%);
+                margin-top: 20px;
+                padding: 12px;
+              "
+              onclick="viewCard()"
+            >
+              Confirm
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--  Card Number  MM YY CVC
+    e.g. 123 Confirm
+
+
+    Thank you! We've added your card details Continue
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
